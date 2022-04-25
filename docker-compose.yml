@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  dawnstar-backend:
+    image: dawnstar-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    networks:
+      - webcheck
+
+networks:
+  webcheck:
+    driver: bridge
